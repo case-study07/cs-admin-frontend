@@ -20,7 +20,6 @@ COPY . .
 USER nextjs
 EXPOSE 3000
 ENV PORT 3000
-CMD ["yarn", "dev"]
 
 # Rebuild the source code only when needed
 FROM node:14-alpine AS builder
