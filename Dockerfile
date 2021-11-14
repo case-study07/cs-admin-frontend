@@ -8,6 +8,7 @@ RUN yarn install --frozen-lockfile
 
 # development
 FROM node:14-alpine AS dev
+RUN apk add bash
 WORKDIR /app
 
 ENV NODE_ENV development
@@ -16,10 +17,11 @@ RUN addgroup -g 1001 -S nodejs
 RUN adduser -S nextjs -u 1001
 
 COPY . .
-
+RUN chmod +x ./dev.sh
 USER nextjs
 EXPOSE 3000
 ENV PORT 3000
+CMD [ "./dev.sh" ]
 
 # Rebuild the source code only when needed
 FROM node:14-alpine AS builder
