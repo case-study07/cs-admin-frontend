@@ -13,6 +13,11 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         name: Check out code
+        with:
+          repository: case-study07/manifest
+          
+      - name: Run Test
+        run: ls
 
       - uses: mr-smithers-excellent/docker-build-push@v5
         name: Build & push Docker image
@@ -23,3 +28,8 @@ jobs:
           dockerfile: Dockerfile
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
+
+      - name: Set foobar to cool
+        uses: mikefarah/yq@master
+        with:
+          cmd: yq eval -i '.foo.bar = "cool"' 'config.yml'
