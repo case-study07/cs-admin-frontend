@@ -31,8 +31,10 @@ jobs:
           
       - name: Set foobar to cool
         uses: mikefarah/yq@master
+        env:
+          repository: ${"docker.io/raityupiyo/cs-admin-backend:"}${github.run_number}
         with:
-          cmd: yq eval -i '.spec.template.spec.containers[0].image = "docker.io/raityupiyo/cs-admin-backend:${github.run_number}"' 'admin-front-deployment.yaml'
+          cmd: yq eval -i '.spec.template.spec.containers[0].image = ${env.repository}' 'admin-front-deployment.yaml'
 
       - name: Test
         run:  cat admin-front-deployment.yaml
