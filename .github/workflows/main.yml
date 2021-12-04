@@ -23,18 +23,3 @@ jobs:
           dockerfile: Dockerfile
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
-          
-      - uses: actions/checkout@v2
-        name: Check out code
-        with:
-          repository: case-study07/manifest
-          
-      - name: Set foobar to cool
-        uses: mikefarah/yq@master
-        env:
-          repository: ${"docker.io/raityupiyo/cs-admin-backend:"}${github.run_number}
-        with:
-          cmd: yq eval -i ".spec.template.spec.containers[0].image = $env.repository" "admin-front-deployment.yaml"
-
-      - name: Test
-        run:  cat admin-front-deployment.yaml
