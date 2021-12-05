@@ -34,7 +34,7 @@ jobs:
         with:
           cmd: yq eval '.spec.template.spec.containers[0].image |= "docker.io/raityupiyo/cs-admin-frontend:'${IMAGE_TAG}'"' -i admin-front-deployment.yaml
         env:
-          IMAGE_TAG=${{ github.run_number }} 
+          IMAGE_TAG: ${{ github.run_number }} 
 
       - name: Test
         run:  cat admin-front-deployment.yaml
