@@ -28,7 +28,6 @@ jobs:
         name: Check out code
         with:
           repository: case-study07/manifest
-          ref: dev
           
       - name: Set foobar to cool
         uses: mikefarah/yq@master
@@ -37,5 +36,13 @@ jobs:
         env:
           IMAGE_TAG: ${{ github.run_number }} 
 
-      - name: Test
-        run:  git branch
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v3
+        with:
+          token: ${{ secrets.TOKEN }}
+          commit-message: |
+              update container image
+          committer: GitHub <noreply@github.com>
+          author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
+          branch: create-pull-request/release/${{ github.run_number }}
+          base: main
