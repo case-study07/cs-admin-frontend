@@ -28,6 +28,7 @@ jobs:
         name: Check out code
         with:
           repository: case-study07/manifest
+          ref: "change-${github.run_number}"
           
       - name: Set foobar to cool
         uses: mikefarah/yq@master
@@ -37,4 +38,4 @@ jobs:
           IMAGE_TAG: ${{ github.run_number }} 
 
       - name: Test
-        run:  cat admin-front-deployment.yaml
+        run:  git branch
