@@ -28,7 +28,7 @@ jobs:
         name: Check out code
         with:
           repository: case-study07/manifest
-          ref: ${{github.run_number}}
+          ref: dev
           
       - name: Set foobar to cool
         uses: mikefarah/yq@master
