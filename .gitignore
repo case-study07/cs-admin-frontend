@@ -35,3 +35,9 @@ yarn-error.log*
 
 # typescript
 *.tsbuildinfo
+# ccs
+.main_browser.css
+
+# .lock
+yarn.lock
+pakage-lock.json
