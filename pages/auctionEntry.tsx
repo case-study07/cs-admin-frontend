@@ -2,7 +2,7 @@ import { Layout } from "../components/ui";
 import { ReactNode } from "react";
 import s from "../styles/auctionEntry.module.css";
 
-export default function auctionEntry() :ReactNode{
+export default function AuctionEntry() :ReactNode{
   return (
     <div className={s.auctionEntry}>
       <article>
@@ -78,4 +78,4 @@ export default function auctionEntry() :ReactNode{
     </div>
   );
 }
-auctionEntry.Layout = Layout;
+AuctionEntry.Layout = Layout;

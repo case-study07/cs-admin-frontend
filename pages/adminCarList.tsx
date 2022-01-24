@@ -1,8 +1,21 @@
-// import { Layout } from "components/ui";
-import { ReactNode } from "react";
+import { Layout } from "../components/ui";
+import { ReactNode, useEffect, useState } from "react";
 import s from "../styles/adminCarList.module.css";
+import { CarBodyNumber } from "../types/CarBodyNumber.type";
+import { fetchClient } from "../services/fetchClient";
 
-export default function adminCarList(): ReactNode {
+export default function AdminCarList(): ReactNode {
+  const [carBodyNumbers, setCarBodyNumbers] = useState<CarBodyNumber[] | null>(
+    null
+  );
+
+  useEffect(() => {
+    fetchClient.get<CarBodyNumber[]>("/car-body-number").then((res) => {
+      console.log(res.data);
+      setCarBodyNumbers(res.data);
+    });
+  }, []);
+
   return (
     <div className={s.adminCarList}>
       <article>
@@ -24,7 +37,7 @@ export default function adminCarList(): ReactNode {
           </nav>
         </div>
         <div>
-            <h2>車両一覧</h2>
+          <h2>車両一覧</h2>
           <table>
             <tbody>
               <tr>
@@ -39,20 +52,25 @@ export default function adminCarList(): ReactNode {
                 <th>修復歴</th>
                 <th>車検有無</th>
               </tr>
-              <tr>
-                <td>
-                  <img src="" alt="" />
-                </td>
-                <td>86 2.0 GT HKS WORK18AW </td>
-                <td>ホンダ</td>
-                <td>S</td>
-                <td>DBA-ZN6</td>
-                <td>2014</td>
-                <td>6.2万km</td>
-                <td>2000cc</td>
-                <td>2022年4月</td>
-                <td>あり</td>
-              </tr>
+              {carBodyNumbers?.map((carBodyNumber, idx) => (
+                <tr key={idx}>
+                  <td>
+                    <img src="" alt="" />
+                  </td>
+                  <td>{carBodyNumber.carModel.name}</td>
+                  <td>{carBodyNumber.maker.name}</td>
+                  <td>{carBodyNumber.evaluationPoint}</td>
+                  <td>{carBodyNumber.format}</td>
+                  <td>{carBodyNumber.modelYear}</td>
+                  <td>{}</td>
+                  <td>{}</td>
+                  <td>{}</td>
+                  <td>{}</td>
+                  <td>{}</td>
+                  <td>{}</td>
+                  <td>{}</td>
+                </tr>
+              ))}
             </tbody>
           </table>
         </div>
@@ -60,4 +78,4 @@ export default function adminCarList(): ReactNode {
     </div>
   );
 }
-// adminCarList .Layout = Layout;
+AdminCarList.Layout = Layout;

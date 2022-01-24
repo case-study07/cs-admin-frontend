@@ -1,50 +1,49 @@
-.adminCarList{
-    width: 95%;
-    /* border: 2px solid red; */
-    @apply bg-white mx-auto rounded py-8;
+.adminCarList {
+  width: 95%;
+  /* border: 2px solid red; */
+  @apply bg-white mx-auto rounded py-8;
 
-    & > article{
-        @apply bg-white py-3 mb-5 rounded;
+  & > article {
+    @apply bg-white py-3 mb-5 rounded;
 
-        & h2{
-            @apply text-2xl pl-10 font-bold;
+    & h2 {
+      @apply text-2xl pl-10 font-bold;
+    }
+  }
+
+  & > div {
+    @apply flex justify-between;
+
+    & > div:nth-of-type(1) {
+      @apply bg-white w-1/5 rounded;
+
+      & nav {
+        @apply my-6;
+      }
+
+      & ul {
+        @apply flex flex-col gap-5 items-start pl-10;
+
+        & li {
+          @apply text-2xl text-link-color;
         }
+      }
     }
 
-    & > div{
-        @apply flex justify-between;
+    & > div:nth-of-type(2) {
+      @apply bg-white w-3/4 rounded;
 
-        & > div:nth-of-type(1){
-            @apply bg-white w-1/5 rounded;
+      & h2 {
+        @apply text-2xl ml-10;
+      }
 
-            & nav{
-                @apply my-6;
-            }
+      & table {
+        @apply mx-auto mt-6;
 
-            & ul{
-                @apply flex flex-col gap-5 items-start pl-10;
-
-                & li{
-                    @apply text-2xl text-link-color;
-                }
-            }
+        & img {
+          @apply mx-auto;
         }
-
-        & > div:nth-of-type(2){
-            @apply bg-white w-3/4 rounded;
-
-            & h2{
-                @apply text-2xl ml-10;
-            }
-
-            & table{
-                @apply mx-auto mt-6;
-
-                & img{
-                    @apply mx-auto;
-                }
-            }
-        }
+      }
     }
-
-} 
+  }
+}

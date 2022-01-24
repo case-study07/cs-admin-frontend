@@ -1,4 +1,4 @@
-import { Layout } from "components/ui";
+import { Layout } from "../components/ui";
 import { ReactNode } from "react";
 import s from "../styles/auctionDelete.module.css";
 
