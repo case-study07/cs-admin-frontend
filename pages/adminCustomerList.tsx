@@ -10,8 +10,7 @@ export default function AdminRegisteredCustomerList(): ReactNode {
   useEffect(() => {
     try {
       fetchClient.get<Member[]>("/member").then((res) => {
-        if (res !== null || res) return;
-        setMembers(res);
+        setMembers(res.data);
       });
     } catch (err) {
       console.error(err);
