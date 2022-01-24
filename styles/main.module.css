@@ -1,0 +1,35 @@
+
+
+/* auctionLabel */
+.auctionLabel {
+  display: flex;
+  flex-flow: column;
+  width: 90%;
+  margin: 0 auto;
+
+  & > div {
+    @apply flex order-2 mx-auto w-11/12 ;
+    & img {
+      @apply w-full h-auto;
+    }
+  }
+  & > a {
+    @apply order-3 text-right;
+  }
+}
+ .auctionLabel > h2 {
+  @apply order-1;
+}
+/* auctionLabel ここまで */
+
+
+
+
+/* carDetailCardの例あると */
+.carDetailLabel {
+  @apply py-4  bg-white my-5;
+}
+
+.pager {
+  @apply flex justify-between w-11/12 mx-auto;
+}
