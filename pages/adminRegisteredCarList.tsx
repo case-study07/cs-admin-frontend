@@ -1,8 +1,8 @@
-// import { Layout } from "components/ui";
+import { Layout } from "../components/ui";
 import { ReactNode } from "react";
 import s from "../styles/adminRegisteredCarList.module.css";
 
-export default function adminRegisteredCarList(): ReactNode {
+export default function AdminRegisteredCarList(): ReactNode {
   return (
     <div className={s.adminRegisteredCarList}>
       <h2>登録車一覧</h2>
@@ -41,4 +41,5 @@ export default function adminRegisteredCarList(): ReactNode {
     </div>
   );
 }
-// adminRegisteredCarList .Layout = Layout;
+
+AdminRegisteredCarList.Layout = Layout;
