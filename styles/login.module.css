@@ -1,0 +1,22 @@
+.login{
+    @apply bg-white w-1/2 py-36 rounded-lg shadow-lg mx-auto;
+
+    & h2{
+        @apply text-2xl text-center mb-5;
+    }
+
+    & form{
+        @apply w-1/2 mx-auto;
+
+        & div input{
+            @apply border-2 rounded w-full mb-6;
+        }
+
+        & input[type="submit"]{
+            background-color: #41C767;
+            display: block;
+            padding: 5px;
+            @apply mx-auto rounded;
+        }
+    }
+}
