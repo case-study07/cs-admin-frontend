@@ -1,7 +1,7 @@
 const baseURL = "http://localhost:9000";
 
 interface Res<T> {
-  data: T;
+  data: T | [];
   status: number;
 }
 
@@ -14,11 +14,14 @@ export const fetchClient = {
       },
     })
       .then(async (res) => {
-        if (!res.ok) {
-          throw new Error("取得エラー");
-        }
-        return await res.json();
+        if (!res.ok) throw new Error("取得エラー");
+        const data = await res.json();
+        if (data.lenth === 0) return [];
+        return data;
       })
+      .catch((err) => {
+        throw Error(err);
+      });
     return {
       data: await res,
       status: res.status,
