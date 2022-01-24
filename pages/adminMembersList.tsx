@@ -80,21 +80,31 @@ const adminMembersList: NextPage = () => {
             </li>
           </ul>
         </nav>
-        <ul>
-          {members?.map((member, idx) => (
-            <li key={idx}>
-              <p>{member.id}</p>
-              <p>{member.name}</p>
-              <p>{member.companyName}</p>
-              <p>{member.phoneNumber}</p>
-              <p>{member.email}</p>
-              <p>{member.creditCheck}</p>
-              <p>{member.malicuousFlag}</p>
-              <p>{member.iconImage}</p>
-            </li>
-          ))}
-        </ul>
 
+        <table>
+          <thead>
+            <th>ID</th>
+            <th>画像</th>
+            <th>名前</th>
+            <th>会社名</th>
+            <th>電話番号</th>
+            <th>メールアドレス</th>
+            <th>信用チェック</th>
+            <th>悪質フラグ</th>
+          </thead>
+          {members?.map((member, idx) => (
+            <tr key={idx}>
+              <td>{member.id}</td>
+              <td>{member.iconImage}</td>
+              <td>{member.name}</td>
+              <td>{member.companyName}</td>
+              <td>{member.phoneNumber}</td>
+              <td>{member.email}</td>
+              <td>{member.creditCheck ? "◯" : "X"}</td>
+              <td>{member.malicuousFlag ? "◯" : "X"}</td>
+            </tr>
+          ))}
+        </table>
         <a href="">一覧へ</a>
       </article>
     </main>
