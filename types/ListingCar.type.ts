@@ -10,7 +10,7 @@ export interface ListingCar {
   mileage: number;
   exterior: string;
   interior: string;
-  IschangeColor: 0;
+  IschangeColor: number;
   SuggestedListingOne: number;
   createdAt: string;
   updatedAt: string;
@@ -29,7 +29,7 @@ export interface ListingCar {
     }
   ];
   addition: {
-    id: 1;
+    id: number;
     isPS: boolean;
     isPW: boolean;
     isAW: boolean;
@@ -46,7 +46,7 @@ export interface ListingCar {
     deletedAt: null;
   };
   testingRecord: {
-    id: 1;
+    id: number;
     repaired: string;
     jack: string;
     tool: string;
@@ -68,7 +68,7 @@ export interface ListingCar {
     deletedAt: null;
   };
   paperClass: {
-    id: 1;
+    id: number;
     securityDocument: boolean;
     manual: boolean;
     createdAt: string;
@@ -100,5 +100,82 @@ export interface ListingCar {
     createdAt: string;
     updatedAt: string;
     deletedAt: null | string;
+    maker: {
+      id: number;
+      name: string;
+      createdAt: string;
+      updatedAt: string;
+      deletedAt: null | string;
+    };
+    carModel: {
+      id: number;
+      name: string;
+      createdAt: string;
+      updatedAt: string;
+      deletedAt: null | string;
+    };
+    shape: {
+      id: number;
+      name: string;
+      createdAt: string;
+      updatedAt: string;
+      deletedAt: null | string;
+    };
+    fuel: {
+      id: number;
+      name: string;
+      createdAt: string;
+      updatedAt: string;
+      deletedAt: null | string;
+    };
+    exteriorColor: {
+      id: number;
+      name: string;
+      createdAt: string;
+      updatedAt: string;
+      deletedAt: null | string;
+    };
+    interiorColor: {
+      id: number;
+      name: string;
+      createdAt: string;
+      updatedAt: string;
+      deletedAt: null | string;
+    };
+    shift: {
+      id: number;
+      name: string;
+      createdAt: string;
+      updatedAt: string;
+      deletedAt: null | string;
+    };
+    gear: {
+      id: number;
+      name: string;
+      createdAt: string;
+      updatedAt: string;
+      deletedAt: null | string;
+    };
+    airConditoner: {
+      id: number;
+      name: string;
+      createdAt: string;
+      updatedAt: string;
+      deletedAt: null | string;
+    };
+    importedCar: {
+      id: number;
+      name: string;
+      createdAt: string;
+      updatedAt: string;
+      deletedAt: null | string;
+    };
+    handle: {
+      id: number;
+      name: string;
+      createdAt: string;
+      updatedAt: string;
+      deletedAt: null | string;
+    };
   };
 }
