@@ -6,7 +6,7 @@ import { Member } from "../types/Member.type";
 type Props = {};
 
 const AdminMembersList: NextPage = () => {
-  const [members, setMembers] = useState<Member[]>();
+  const [members, setMembers] = useState<Member[] | null>(null);
 
   useEffect(() => {
     try {
@@ -40,6 +40,9 @@ const AdminMembersList: NextPage = () => {
           <ul>
             <li>
               <select name="" id="">
+                <option>車体名</option>
+                <option>車体名</option>
+                <option>車体名</option>
                 <option>車体名</option>
               </select>
             </li>
