@@ -5,7 +5,7 @@ import { Member } from "../types/Member.type";
 
 type Props = {};
 
-const adminMembersList: NextPage = () => {
+const AdminMembersList: NextPage = () => {
   const [members, setMembers] = useState<Member[]>();
 
   useEffect(() => {
@@ -111,4 +111,4 @@ const adminMembersList: NextPage = () => {
   );
 };
 
-export default adminMembersList;
+export default AdminMembersList;
